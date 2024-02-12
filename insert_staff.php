@@ -18,7 +18,7 @@
                   echo '<form class="rounded-lg bg-blue-100 shadow-md px-8 pt-6 pb-8 mb-4" action="insert_staff_sql.php" method=post>';
                      $username = $_COOKIE["username"];
                      $password = $_COOKIE["password"];
-                     $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+                     $conn = new mysqli("localhost",$username,$password, "library");
                      $sql ="  SELECT * 
                               FROM PERSON
                               WHERE id NOT IN(

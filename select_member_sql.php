@@ -19,7 +19,7 @@ echo '<div class="relative min-h-screen flex">';
       $username = $_COOKIE["username"]; 
       $password = $_COOKIE["password"];
 
-      $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+      $conn = new mysqli("localhost",$username,$password, "library");
       if($conn->connect_errno) {
           echo "Connection issues";
           exit; 

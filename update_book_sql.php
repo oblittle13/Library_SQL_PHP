@@ -21,7 +21,7 @@ echo '<div class="relative min-h-screen flex">';
       $username = $_COOKIE["username"];
       $password = $_COOKIE["password"];
 
-      $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+      $conn = new mysqli("localhost",$username,$password, "library");
 
       $sql = "update BOOK set isbn='$_POST[isbn]', title='$_POST[title]', author='$_POST[author]', lib_name='$_POST[lib_name]' where isbn='$_POST[oldisbn]'"; 
       if($conn->query($sql)) { 

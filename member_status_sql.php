@@ -16,7 +16,7 @@
           if(isset($_COOKIE["username"])) {
             $username = $_COOKIE["username"]; 
             $password = $_COOKIE["password"];
-            $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+            $conn = new mysqli("localhost",$username,$password, "library");
             if($conn->connect_errno) {
                 echo "Connection issues";
                 exit; 
@@ -94,7 +94,7 @@
                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                       date_default_timezone_set('America/Edmonton');
                       $now = date('Y-m-d');
-                      $return_date = $row[return_date];
+                      $return_date = $row['return_date'];
                       $return_date = date('Y-m-d', strtotime(str_replace('-', '/', $return_date)));
                       if ($return_date > $now) {
                         echo "<tr class=\"bg-blue-200\">

@@ -2,7 +2,7 @@
 
 
 //    Validate User Credentials
-$con = new mysqli("vconroy.cs.uleth.ca",$_POST["username"],$_POST["password"]);
+$con = new mysqli("localhost",$_POST["username"],$_POST["password"], "login_info");
 if($con->connect_errno){
     echo "$con->connect_errno"; 
     echo "<h3>Invalid username or password!</h3><p><a href=\"index.php\">Try Again</a></p>";

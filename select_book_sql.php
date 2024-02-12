@@ -19,7 +19,7 @@ if(isset($_COOKIE["username"])) {
    $username = $_COOKIE["username"]; 
    $password = $_COOKIE["password"];
 
-   $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+   $conn = new mysqli("localhost",$username,$password, "library");
    if($conn->connect_errno) {
       echo "Connection issues";
       exit; 
@@ -31,7 +31,7 @@ if(isset($_COOKIE["username"])) {
 
    // echo "<p>$_POST[lname]</p>";
 
-   $sql = "select * from BOOK where isbn='".$_POST[isbn]."'";
+   $sql = "select * from BOOK where isbn='".$_POST['isbn']."'";
    $result = $conn->query($sql); 
    if($result->num_rows != 0)  { 	
       

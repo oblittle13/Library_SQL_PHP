@@ -20,12 +20,12 @@ echo '<div class="relative min-h-screen flex">';
          $username = $_COOKIE["username"];
          $password = $_COOKIE["password"];
 
-         $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+         $conn = new mysqli("localhost",$username,$password, "library");
 
-         $isbn = $_POST[isbn];
-         $title = $_POST[title];
-         $author = $_POST[author];
-         $lib_name = $_POST[lib_name];
+         $isbn = $_POST['isbn'];
+         $title = $_POST['title'];
+         $author = $_POST['author'];
+         $lib_name = $_POST['lib_name'];
          $sql1 = "delete from BOOK where isbn='$isbn' and lib_name='$lib_name'"; 
          $sql2 = "delete from BOOK where title='$title' and author='$author' and lib_name = '$lib_name'";
 

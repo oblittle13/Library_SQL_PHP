@@ -22,7 +22,7 @@ if(isset($_COOKIE["username"])){
    $username = $_COOKIE["username"];
    $password = $_COOKIE["password"];	
 
-   $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+   $conn = new mysqli("localhost",$username,$password, "library");
 
    $sql = "select lname from LIBRARY"; 
    $result = $conn->query($sql);

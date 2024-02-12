@@ -19,9 +19,9 @@
                         $username = $_COOKIE["username"];
                         $password = $_COOKIE["password"];
 
-                        $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+                        $conn = new mysqli("localhost",$username,$password, "library");
 
-                        $id = $_POST[staff_id];
+                        $id = $_POST['staff_id'];
                         $sql = "delete from STAFF where staff_id='$id'"; 
                         if($conn->query($sql)) { 
                             echo '<h3 class="text-xl font-semibold pb-10">';

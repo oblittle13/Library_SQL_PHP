@@ -16,10 +16,10 @@
             if (isset($_COOKIE["username"])) { 
                $username = $_COOKIE["username"];
                $password = $_COOKIE["password"];
-               $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+               $conn = new mysqli("localhost",$username,$password, "library");
                $sql = "insert into MEMBER (p_id) values ('$_POST[p_id]')";
 
-               if($mysqli->connect_errno)
+               if($conn->connect_errno)
                {
                   echo "Connection Issue!";
                   exit; 

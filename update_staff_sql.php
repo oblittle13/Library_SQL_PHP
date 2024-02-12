@@ -16,7 +16,7 @@
                     if (isset($_COOKIE["username"])) { 
                         $username = $_COOKIE["username"];
                         $password = $_COOKIE["password"];
-                        $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+                        $conn = new mysqli("localhost",$username,$password, "library");
                         $sql =  "   UPDATE STAFF 
                                     SET staff_id = '$_POST[staff_id]', hours_worked = ('$_POST[oldhours]' + '$_POST[add_hours]')
                                     WHERE staff_id = '$_POST[oldid]'

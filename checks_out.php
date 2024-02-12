@@ -24,7 +24,7 @@ if(isset($_COOKIE["username"])){
    $username = $_COOKIE["username"];
    $password = $_COOKIE["password"];	
 
-   $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+   $conn = new mysqli("localhost",$username,$password, "library");
 
    $sql = "select m.member_id, p.firstname, p.lastname from MEMBER as m, PERSON as p where m.p_id = p.id AND m.member_id in (select member_id from MEMBER)";
    $result = $conn->query($sql);

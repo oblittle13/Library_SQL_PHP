@@ -19,8 +19,8 @@
 
                             $username = $_COOKIE["username"];
                             $password = $_COOKIE["password"];	
-                            $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
-                            $sql = "SELECT *
+                            $conn = new mysqli("localhost",$username,$password, "library");
+                            $sql = "SELECT *, hours_worked AS oldhours
                                     FROM STAFF, PERSON
                                     WHERE staff_id='$_POST[staff_id]' AND p_id = id";
 

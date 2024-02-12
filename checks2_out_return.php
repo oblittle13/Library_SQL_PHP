@@ -24,7 +24,7 @@ if(isset($_COOKIE["username"])){
    $username = $_COOKIE["username"];
    $password = $_COOKIE["password"];	
 
-   $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+   $conn = new mysqli("localhost",$username,$password, "library");
 
    $sql = "select * from BOOK where isbn in (select b_isbn from CHECKS_OUT where m_id = '$_POST[member_id]')";
    $result = $conn->query($sql);

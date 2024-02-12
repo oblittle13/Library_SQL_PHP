@@ -19,7 +19,7 @@ echo '<div class="relative min-h-screen flex">';
       $username = $_COOKIE["username"]; 
       $password = $_COOKIE["password"];
 
-      $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+      $conn = new mysqli("localhost",$username,$password, "library");
       if($conn->connect_errno) {
           echo "Connection issues";
           exit; 
@@ -30,7 +30,7 @@ echo '<div class="relative min-h-screen flex">';
       echo '<div class="rounded bg-blue-100 shadow-md px-8 pt-6 pb-8 mb-4">';
 
 
-      $sql = "select * from PERSON where id='".$_POST[id]."'";
+      $sql = "select * from PERSON where id='".$_POST['id']."'";
       $result = $conn->query($sql); 
       if($result->num_rows != 0)  { 	
           

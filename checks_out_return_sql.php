@@ -21,7 +21,7 @@ echo '<div class="relative min-h-screen flex">';
       $username = $_COOKIE["username"];
       $password = $_COOKIE["password"];
 
-      $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+      $conn = new mysqli("localhost",$username,$password, "library");
 
       $sql = "delete from CHECKS_OUT where m_id = '$_POST[mem_id]' and b_isbn = '$_POST[isbn]'";
 

@@ -21,7 +21,7 @@ echo '<div class="relative min-h-screen flex">';
       $username = $_COOKIE["username"];
       $password = $_COOKIE["password"];
 
-      $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+      $conn = new mysqli("localhost",$username,$password, "library");
       $sql = "insert into CHECKS_OUT values ('$_POST[mem_id]', '$_POST[check_isbn]', '$_POST[checkout_date]', '$_POST[return_date]')"; 
 
       $sql2 = "select * from BOOK where isbn = '$_POST[check_isbn]' and checked_out = FALSE";

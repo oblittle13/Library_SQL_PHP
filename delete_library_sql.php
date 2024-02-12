@@ -17,8 +17,8 @@
                      
                   $username = $_COOKIE["username"];
                   $password = $_COOKIE["password"];
-                  $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
-                  $lname = $_POST[lname];
+                  $conn = new mysqli("localhost",$username,$password, "library");
+                  $lname = $_POST['lname'];
                   $sql = "delete from LIBRARY where lname='$lname'"; 
 
                   if($conn->query($sql)) { 

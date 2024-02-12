@@ -20,9 +20,9 @@ echo '<div class="relative min-h-screen flex">';
          $username = $_COOKIE["username"];
          $password = $_COOKIE["password"];
 
-         $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+         $conn = new mysqli("localhost",$username,$password, "library");
 
-         $id = $_POST[id];
+         $id = $_POST['id'];
          $sql = "delete from PERSON where id='$id'"; 
          if($conn->query($sql)) { 
             echo '<h3 class="text-xl font-semibold pb-10">';

@@ -23,7 +23,7 @@ echo "<form class=\"bg-blue-100 shadow-md px-8 pt-6 pb-8 mb-4\" action=\"update_
 	$username = $_COOKIE["username"];
 	$password = $_COOKIE["password"];	
 
-	$conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
+	$conn = new mysqli("localhost",$username,$password, "library");
 	if($conn->connect_errno)
 	{
 	   echo "Connection Problem!";
@@ -78,7 +78,7 @@ echo "<form class=\"bg-blue-100 shadow-md px-8 pt-6 pb-8 mb-4\" action=\"update_
       echo '<label class="block text-gray-700 mb-2 font-medium" for="email">Library:</label>';
         echo '<select class="rounded w-full py-2 px-2" name="lib_name">';
           while($val2 = $result2->fetch_assoc()) {
-            if ($val2[lname] == $rec[lib_name]) {
+            if ($val2['lname'] == $rec['lib_name']) {
               echo "<option selected value='$val2[lname]'>$val2[lname]</option>"; 
             } else {
               echo "<option value='$val2[lname]'>$val2[lname]</option>"; 
